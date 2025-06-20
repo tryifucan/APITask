@@ -12,10 +12,10 @@ namespace APITask_Framework
 
         public ApiClient()
         {
-            var baseUrl = ConfigurationManager.Get("BaseUrl");
-            var timeout = int.Parse(ConfigurationManager.Get("Timeout"));
-            _apiKey = ConfigurationManager.Get("ApiKey");
-            _apiKeyHeader = ConfigurationManager.Get("ApiKeyHeader");
+            var baseUrl = ConfigurationReader.BaseUrl;
+            var timeout = ConfigurationReader.Timeout;
+            _apiKey = ConfigurationReader.ApiKey;
+            _apiKeyHeader = ConfigurationReader.ApiKeyHeader;
 
             var options = new RestClientOptions(baseUrl)
             {
